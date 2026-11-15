@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Start a Booking Request | Fuji Flame Hibachi Catering</title>
+        <meta name="description" content="Start a booking request with Fuji Flame Hibachi Catering in a few quick steps — event details, package and menu, then review and submit.">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="Imagenes/web/logo-emblem.png" alt="" class="logo-mark" width="44" height="44">
+            <span>FUJI FLAME</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <nav id="siteNav">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="services.html">Services</a>
+            <a href="events.html">Events</a>
+            <a href="reserve.html" class="nav-cta" aria-current="page">Book Now</a>
+            <a href="https://www.instagram.com/fujihibachicateringla" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="25" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="17.5" cy="6.5" r="1"></circle>
+                </svg>
+            </a>
+            <a href="https://wa.me/19095783273" class="social-icon" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" width="25" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                <g transform="translate(6.5,6.5) scale(0.45)" stroke="none" fill="currentColor">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </g>
+                </svg>
+            </a>
+        </nav>
+    </header>
+
+    <section class="page-intro page-banner">
+        <p class="tagline">Booking</p>
+        <h1>Start a Booking Request</h1>
+        <p class="page-intro-text">Tell us about your event in a few quick steps. This is a request, not a confirmed booking — we'll follow up to confirm pricing and availability.</p>
+    </section>
+
+    <section class="booking reveal">
+
+        <!-- step indicator: shows which of the 3 steps is active -->
+        <div class="step-indicator" id="stepIndicator">
+            <span class="step-tag active" data-step-tag="1">
+                <span class="step-tag-num">01</span>
+                <span class="step-tag-label">Event Information</span>
+            </span>
+            <span class="step-tag" data-step-tag="2">
+                <span class="step-tag-num">02</span>
+                <span class="step-tag-label">Service &amp; Menu</span>
+            </span>
+            <span class="step-tag" data-step-tag="3">
+                <span class="step-tag-num">03</span>
+                <span class="step-tag-label">Review &amp; Submit</span>
+            </span>
+        </div>
+
+        <form id="reserveForm" action="https://formspree.io/f/YOUR_RESERVE_FORM_ID" method="POST" novalidate>
+
+            <!-- ============ STEP 1: EVENT INFORMATION ============ -->
+            <div class="form-step" id="step-1" data-step="1">
+                <h2>Event Information</h2>
+                <p class="form-step-intro">Tell us who you are and when / where the event is happening.</p>
+
+                <div class="field-row">
+                    <div class="field" id="field-firstName">
+                        <label for="res-first-name">First Name<span class="required-mark">*</span></label>
+                        <input type="text" id="res-first-name" name="firstName" required>
+                        <span class="field-error" id="error-firstName"></span>
+                    </div>
+                    <div class="field" id="field-lastName">
+                        <label for="res-last-name">Last Name<span class="required-mark">*</span></label>
+                        <input type="text" id="res-last-name" name="lastName" required>
+                        <span class="field-error" id="error-lastName"></span>
+                    </div>
+                </div>
+
+                <div class="field-row">
+                    <div class="field" id="field-email">
+                        <label for="res-email">Email<span class="required-mark">*</span></label>
+                        <input type="email" id="res-email" name="email" required>
+                        <span class="field-error" id="error-email"></span>
+                    </div>
+                    <div class="field" id="field-phone">
+                        <label for="res-phone">Phone<span class="required-mark">*</span></label>
+                        <input type="tel" id="res-phone" name="phone" required>
+                        <span class="field-error" id="error-phone"></span>
+                    </div>
+                </div>
+
+                <div class="field" id="field-eventLocation" style="margin-bottom: 28px;">
+                    <label for="res-location">Event Location / Address<span class="required-mark">*</span></label>
+                    <input type="text" id="res-location" name="eventLocation" placeholder="Street address, city" required>
+                    <span class="field-error" id="error-eventLocation"></span>
+                </div>
+
+                <div class="field" id="field-eventDate" style="margin-bottom: 28px;">
+                    <label for="res-date">Date of Service<span class="required-mark">*</span></label>
+                    <input type="date" id="res-date" name="eventDate" required>
+                    <span class="field-error" id="error-eventDate"></span>
+                </div>
+
+                <div class="form-group" id="field-occasion">
+                    <span class="form-group-label">Occasion<span class="required-mark">*</span></span>
+                    <div class="chip-group" role="radiogroup" aria-label="Occasion">
+                        <input class="chip-input visually-hidden" type="radio" name="occasion" id="occasion-birthday" value="Birthday">
+                        <label class="chip-label" for="occasion-birthday">Birthday</label>
+
+                        <input class="chip-input visually-hidden" type="radio" name="occasion" id="occasion-wedding" value="Wedding">
+                        <label class="chip-label" for="occasion-wedding">Wedding</label>
+
+                        <input class="chip-input visually-hidden" type="radio" name="occasion" id="occasion-corporate" value="Corporate Event">
+                        <label class="chip-label" for="occasion-corporate">Corporate Event</label>
+
+                        <input class="chip-input visually-hidden" type="radio" name="occasion" id="occasion-babyshower" value="Baby Shower">
+                        <label class="chip-label" for="occasion-babyshower">Baby Shower</label>
+
+                        <input class="chip-input visually-hidden" type="radio" name="occasion" id="occasion-holiday" value="Holiday Party">
+                        <label class="chip-label" for="occasion-holiday">Holiday Party</label>
+
+                        <input class="chip-input visually-hidden" type="radio" name="occasion" id="occasion-anniversary" value="Anniversary">
+                        <label class="chip-label" for="occasion-anniversary">Anniversary</label>
+
+                        <input class="chip-input visually-hidden" type="radio" name="occasion" id="occasion-other" value="Other">
+                        <label class="chip-label" for="occasion-other">Other</label>
+                    </div>
+                    <span class="field-error" id="error-occasion"></span>
+
+                    <div class="field other-occasion-field" id="otherOccasionField" hidden>
+                        <label for="res-occasion-other-text">Please describe the occasion<span class="required-mark">*</span></label>
+                        <input type="text" id="res-occasion-other-text" name="occasionOther">
+                        <span class="field-error" id="error-occasionOther"></span>
+                    </div>
+                </div>
+
+
+                <div class="form-group" id="field-accent">
+                    <span class="form-group-label">Accent Colour</span>
+                    <div class="swatch-grid" role="radiogroup" aria-label="Accent colour">
+                        <!-- row 1 -->
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-black" value="Black" data-hex="#141312">
+                        <label class="swatch-label" style="background-color:#141312;" for="accent-black" aria-label="Black" title="Black"></label>
+
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-red" value="Red" data-hex="#B32218">
+                        <label class="swatch-label" style="background-color:#B32218;" for="accent-red" aria-label="Red" title="Red"></label>
+
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-gold" value="Gold" data-hex="#C9A227">
+                        <label class="swatch-label" style="background-color:#C9A227;" for="accent-gold" aria-label="Gold" title="Gold"></label>
+
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-lightgrey" value="Light Grey" data-hex="#C9C9CC">
+                        <label class="swatch-label" style="background-color:#C9C9CC;" for="accent-lightgrey" aria-label="Light Grey" title="Light Grey"></label>
+
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-grey" value="Grey" data-hex="#8A8A8A">
+                        <label class="swatch-label" style="background-color:#8A8A8A;" for="accent-grey" aria-label="Grey" title="Grey"></label>
+
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-burgundy" value="Burgundy" data-hex="#6D1F2E">
+                        <label class="swatch-label" style="background-color:#6D1F2E;" for="accent-burgundy" aria-label="Burgundy" title="Burgundy"></label>
+
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-lightblue" value="Light Blue" data-hex="#A7C9E6">
+                        <label class="swatch-label" style="background-color:#A7C9E6;" for="accent-lightblue" aria-label="Light Blue" title="Light Blue"></label>
+
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-navy" value="Navy" data-hex="#1D2A4D">
+                        <label class="swatch-label" style="background-color:#1D2A4D;" for="accent-navy" aria-label="Navy" title="Navy"></label>
+
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-slate" value="Slate" data-hex="#7A8B9C">
+                        <label class="swatch-label" style="background-color:#7A8B9C;" for="accent-slate" aria-label="Slate" title="Slate"></label>
+
+                        <!-- row 2 -->
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-burntorange" value="Burnt Orange" data-hex="#B5502A">
+                        <label class="swatch-label" style="background-color:#B5502A;" for="accent-burntorange" aria-label="Burnt Orange" title="Burnt Orange"></label>
+
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-green" value="Green" data-hex="#0F6B46">
+                        <label class="swatch-label" style="background-color:#0F6B46;" for="accent-green" aria-label="Green" title="Green"></label>
+
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-sage" value="Sage" data-hex="#9AA88A">
+                        <label class="swatch-label" style="background-color:#9AA88A;" for="accent-sage" aria-label="Sage" title="Sage"></label>
+
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-lavender" value="Lavender" data-hex="#C3A8D6">
+                        <label class="swatch-label" style="background-color:#C3A8D6;" for="accent-lavender" aria-label="Lavender" title="Lavender"></label>
+
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-blushpink" value="Blush Pink" data-hex="#E8A8C0">
+                        <label class="swatch-label" style="background-color:#E8A8C0;" for="accent-blushpink" aria-label="Blush Pink" title="Blush Pink"></label>
+
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-hotpink" value="Hot Pink" data-hex="#D92B6F">
+                        <label class="swatch-label" style="background-color:#D92B6F;" for="accent-hotpink" aria-label="Hot Pink" title="Hot Pink"></label>
+
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-white" value="White" data-hex="#F3F2F2">
+                        <label class="swatch-label" style="background-color:#F3F2F2;" for="accent-white" aria-label="White" title="White"></label>
+
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-ivory" value="Ivory" data-hex="#EFE7D6">
+                        <label class="swatch-label" style="background-color:#EFE7D6;" for="accent-ivory" aria-label="Ivory" title="Ivory"></label>
+
+                        <input class="swatch-input visually-hidden" type="radio" name="accentColour" id="accent-tan" value="Tan" data-hex="#B99274">
+                        <label class="swatch-label" style="background-color:#B99274;" for="accent-tan" aria-label="Tan" title="Tan"></label>
+                    </div>
+                    <p class="accent-colour-chosen" id="accentColourChosen">Accent Colour: <strong>Not selected</strong></p>
+                    <input type="hidden" name="accentColourHex" id="accentColourHex" value="">
+                </div>
+
+                <div class="step-actions">
+                    <button type="button" class="btn-next" data-next="2">Next</button>
+                </div>
+            </div>
+
+            <!-- ============ STEP 2: SERVICE & MENU ============ -->
+            <div class="form-step" id="step-2" data-step="2" tabindex="-1" hidden>
+                <h2>Service &amp; Menu</h2>
+                <p class="form-step-intro">Pick a package and guest count. Every package includes Japanese Fried Rice and Hibachi Vegetables.</p>
+
+                <div id="packageGroups">
+                    <!-- package group 0 (always present) -->
+                    <div class="package-group" data-group-index="0">
+                        <div class="package-group-head">
+                            <h3>Package Group 1</h3>
+                        </div>
+
+                        <div class="package-radio-grid" role="radiogroup" aria-label="Package for group 1">
+                            <input class="package-radio-input visually-hidden" type="radio" name="package-0" id="package-0-classic" value="01 Fuji Classic ($65/guest)" data-price="65" required>
+                            <label class="package-radio-card" for="package-0-classic">
+                                <span class="pkg-num">01</span>
+                                <p class="pkg-name">Fuji Classic</p>
+                                <span class="pkg-price">$65 / guest</span>
+                                <p class="pkg-items">Steak, Chicken, Shrimp</p>
+                            </label>
+
+                            <input class="package-radio-input visually-hidden" type="radio" name="package-0" id="package-0-seafood" value="02 Fuji Seafood Signature ($115/guest)" data-price="115">
+                            <label class="package-radio-card" for="package-0-seafood">
+                                <span class="pkg-num">02</span>
+                                <p class="pkg-name">Fuji Seafood Signature</p>
+                                <span class="pkg-price">$115 / guest</span>
+                                <p class="pkg-items">Lobster, Shrimp, Salmon, Scallops</p>
+                            </label>
+
+                            <input class="package-radio-input visually-hidden" type="radio" name="package-0" id="package-0-samurai" value="03 Fuji Samurai ($85/guest)" data-price="85">
+                            <label class="package-radio-card" for="package-0-samurai">
+                                <span class="pkg-num">03</span>
+                                <p class="pkg-name">Fuji Samurai</p>
+                                <span class="pkg-price">$85 / guest</span>
+                                <p class="pkg-items">Steak, Shrimp, Lobster</p>
+                            </label>
+
+                            <input class="package-radio-input visually-hidden" type="radio" name="package-0" id="package-0-kids" value="04 Fuji Kids ($42/guest)" data-price="42">
+                            <label class="package-radio-card" for="package-0-kids">
+                                <span class="pkg-num">04</span>
+                                <p class="pkg-name">Fuji Kids</p>
+                                <span class="pkg-price">$42 / guest</span>
+                                <p class="pkg-items">Chicken, Steak, Shrimp</p>
+                            </label>
+
+                            <input class="package-radio-input visually-hidden" type="radio" name="package-0" id="package-0-veg" value="05 Fuji Vegetarian ($38/guest)" data-price="38">
+                            <label class="package-radio-card" for="package-0-veg">
+                                <span class="pkg-num">05</span>
+                                <p class="pkg-name">Fuji Vegetarian</p>
+                                <span class="pkg-price">$38 / guest</span>
+                                <p class="pkg-items">Tofu Teriyaki, Mushrooms, Zucchini, Broccoli, Carrots, Onions &amp; Bell Peppers</p>
+                            </label>
+                        </div>
+                        <span class="field-error" id="error-package-0"></span>
+
+                        <div class="field" id="field-guests-0" style="max-width: 220px;">
+                            <label for="guests-0">Number of Guests<span class="required-mark">*</span></label>
+                            <input type="number" name="guests-0" id="guests-0" min="1" required>
+                            <span class="field-error" id="error-guests-0"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="add-group-btn" id="addGroupBtn">+ Add Another Package</button>
+
+                <div class="form-group" style="margin-top: 30px;">
+                    <span class="form-group-label">House Sauces (optional)</span>
+                    <div class="sauce-check-group">
+                        <label class="sauce-check-label"><input type="checkbox" name="sauces" value="Yum Yum"> Yum Yum</label>
+                        <label class="sauce-check-label"><input type="checkbox" name="sauces" value="Ginger"> Ginger</label>
+                        <label class="sauce-check-label"><input type="checkbox" name="sauces" value="Fuji Spicy"> Fuji Spicy</label>
+                    </div>
+                </div>
+
+                <div class="field comments-field" id="field-comments" style="margin-bottom: 10px;">
+                    <label for="res-comments">Allergies, Comments or Special Requests</label>
+                    <p class="field-help" id="commentsHelp">Please list any food allergies so we can plan your menu safely.</p>
+                    <textarea id="res-comments" name="comments" rows="4" maxlength="1000" aria-describedby="commentsHelp commentsCounter" placeholder="Allergies, venue access, parking, preferred arrival time, special occasion details..."></textarea>
+                    <p class="char-counter" id="commentsCounter">0 / 1000</p>
+                </div>
+
+                <div class="step-actions">
+                    <button type="button" class="btn-back" data-back="1">Back</button>
+                    <button type="button" class="btn-next" data-next="3">Next</button>
+                </div>
+            </div>
+
+            <!-- ============ STEP 3: REVIEW & SUBMIT ============ -->
+            <div class="form-step" id="step-3" data-step="3" tabindex="-1" hidden>
+                <h2>Review &amp; Submit</h2>
+                <p class="form-step-intro">Please check everything below before sending your request.</p>
+
+                <div id="reviewContent"><!-- filled in by reserve.js --></div>
+
+                <div class="estimate-box">
+                    <p class="estimate-total" id="estimateTotalText">$0 estimated</p>
+                    <p class="estimate-note">Estimate only — final quote confirmed by Fuji Flame. Linen/setup pricing is not included (not yet confirmed).</p>
+                </div>
+                <input type="hidden" name="estimateTotal" id="estimateTotalField" value="">
+                <input type="hidden" name="summary" id="summaryField" value="">
+
+                <div class="confirm-row">
+                    <input type="checkbox" id="res-confirm" name="confirmRequest" value="Yes" required>
+                    <label for="res-confirm">I understand this is a request, not a confirmed booking.</label>
+                </div>
+                <span class="field-error" id="error-confirmRequest"></span>
+
+                <div class="step-actions">
+                    <button type="button" class="btn-back" data-back="2">Back</button>
+                    <button type="submit" class="btn-submit" id="submitBtn">Submit Request</button>
+                </div>
+
+                <p class="form-status" id="reserveStatus" role="status" hidden></p>
+            </div>
+        </form>
+
+        <!-- shown after a successful submit, form above gets hidden -->
+        <div class="booking-thanks" id="bookingThanks" hidden>
+            <h2>Thank You</h2>
+            <p>Your booking request was received. Fuji Flame will follow up with you by email or phone to confirm pricing and availability.</p>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-columns">
+            <div>
+                <h4>Explore</h4>
+                <nav class="footer-nav" aria-label="Footer">
+                    <a href="index.html">Home</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="services.html">Services</a>
+                    <a href="events.html">Events</a>
+                    <a href="reserve.html">Reserve</a>
+                </nav>
+            </div>
+            <div>
+                <h4>Service Area</h4>
+                <p>California<br><a href="reserve.html">Book your event</a></p>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p>+1 (909) 578-3273<br>Fujihibachicateringla@gmail.com</p>
+            </div>
+            <div>
+                <h4>Follow</h4>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/fujihibachicateringla" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" width="25" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <circle cx="17.5" cy="6.5" r="1"></circle>
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/19095783273" class="social-icon" target="_blank" rel="noopener" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" width="25" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            <g transform="translate(6.5,6.5) scale(0.45)" stroke="none" fill="currentColor">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Fuji Flame Hibachi Catering. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="reserve.js"></script>
+</body>
+</html>
