@@ -125,7 +125,9 @@
         <section id="contact" class="newsletter">
             <div class="newsletter-inner">
                 <p class="newsletter-text">Enter your email to receive more information on our catering services.</p>
-                <form class="newsletter-form" id="newsletterForm" action="https://formspree.io/f/YOUR_NEWSLETTER_FORM_ID" method="POST" novalidate>
+                <form class="newsletter-form" id="newsletterForm" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+                    <input type="hidden" name="form-name" value="newsletter">
+                    <p hidden><label>Leave this empty: <input name="bot-field"></label></p>
                     <input type="email" id="newsletter-email" name="email" placeholder="Email Address" aria-label="Email Address" required>
                     <button type="submit">Subscribe</button>
                     <p class="form-status" id="newsletterStatus" role="status" hidden></p>

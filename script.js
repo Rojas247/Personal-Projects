@@ -141,10 +141,10 @@ function handleFormSubmit(formId, statusId, successMessage) {
     var submitBtn = form.querySelector('button[type="submit"]');
     if (submitBtn) submitBtn.disabled = true;
 
-    fetch(form.action, {
+      fetch('/', {
       method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
     })
       .then(function (response) {
         if (response.ok) {

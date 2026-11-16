@@ -476,10 +476,10 @@
     var formData = new FormData(form);
     formData.set('comments', comments);
 
-    fetch(form.action, {
+      fetch('/', {
       method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
     })
       .then(function (response) {
         if (response.ok) {
